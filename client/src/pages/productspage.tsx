@@ -1,7 +1,8 @@
+import {Products} from "../components/products";
 
 const ProductsPage = () => {
     return (
-        <p>Hello this is the Products page</p>
+        <Products />
     )
 }
 

@@ -1,8 +1,8 @@
 import {Routes, Route} from "react-router-dom";
-import {HomePage} from "../pages/home";
-import {ProductsPage} from "../pages/products";
-import {TasksPage} from "../pages/tasks";
-import {LoginPage} from "../pages/login";
+import {HomePage} from "../pages/homepage";
+import {ProductsPage} from "../pages/productspage";
+import {TasksPage} from "../pages/taskspage";
+import {LoginPage} from "../pages/loginpage";
 
 const NavRouter = () => {
     return(
