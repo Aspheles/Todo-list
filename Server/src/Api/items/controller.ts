@@ -26,14 +26,20 @@ const getItemsById = (req : any, res : any) => {
 const CreateItem = (req : any, res : any) => {
     const {name,category,description,price,img_url} = req.body;
 
-    pool.query(queries.createItem, [name,category,description,price,img_url], (error : any, results : any) => {
+    pool.query(queries.checkNameExists, [name], (error:any, results:any) => {
         if(error) throw(error);
-        res.status(201).send("Account has been created");
-  
+
+        if(results.rows.length){
+            res.send("Item with that name already exists");
+        }else{
+            pool.query(queries.createItem, [name,category,description,price,img_url], (error : any, results : any) => {
+                if(error) throw(error);
+                res.status(201).send("Item has been created");
+            })
+        }
+    })
 
     
-
-    
-})}
+}
 
 export { CreateItem, getItems, getItemsById}
