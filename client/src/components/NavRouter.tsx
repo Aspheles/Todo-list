@@ -3,6 +3,7 @@ import {HomePage} from "../pages/homepage";
 import {ProductsPage} from "../pages/productspage";
 import {TasksPage} from "../pages/taskspage";
 import {LoginPage} from "../pages/loginpage";
+import { AddProduct } from "./addproduct";
 
 const NavRouter = () => {
     return(
@@ -11,6 +12,7 @@ const NavRouter = () => {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/tasks" element={<TasksPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/addproduct" element={<AddProduct />} />
         </Routes>
     )
 }

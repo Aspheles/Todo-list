@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 
 const Products = () => {
  const [itemproducts, setItemProducts] = useState<any>();
@@ -18,7 +19,7 @@ const Products = () => {
     <>
     
     <div className="flex flex-col items-end  mt-3">
-        <button className="bg-purple-700 hover:bg-purple-900 text-white px-6 py-2 text-md rounded-md mr-2 ">Add Product</button>
+        <button className="bg-purple-700 hover:bg-purple-900 text-white px-6 py-2 text-md rounded-md mr-2 "><Link to={"/addproduct"}>Add Product</Link></button>
     </div>
     <div className="overflow-x-auto relative flex justify-center items-center mt-2">
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
