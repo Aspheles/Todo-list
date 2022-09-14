@@ -16,7 +16,6 @@ app.get("/users", userController.GetUsers);
 app.get("/user/:id", userController.getUserById);
 app.post("/create", userController.CreateUser);
 
-
 app.listen(PORT, () => {
     console.log(`We are currently live on http://localhost:${PORT}`);
 })
