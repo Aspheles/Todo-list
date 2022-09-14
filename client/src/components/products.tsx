@@ -17,10 +17,12 @@ const Products = () => {
     // <p>{JSON.stringify(products)}</p>
     <>
     
-
-    <div className="overflow-x-auto relative flex justify-center items-center">
+    <div className="flex flex-col items-end  mt-3">
+        <button className="bg-purple-600 hover:bg-purple-900 text-white px-6 py-2 text-md rounded-md mr-2 ">Add Product</button>
+    </div>
+    <div className="overflow-x-auto relative flex justify-center items-center mt-2">
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-dark-900 dark:bg-gray-900 dark:text-gray-400">
             <tr>
                 <th scope="col" className="py-3 px-6">
                     Product name
@@ -40,8 +42,8 @@ const Products = () => {
            
                 {itemproducts?.map((item: { name: string; category: string; description: string; price: number; img_url: string; }) => {
                 return (
-                    <tr key={item.name} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <tr key={item.name} className="bg-white border-b dark:bg-gray-50 dark:border-gray-50">
+                        <th scope="row" className="py-4 px-6 whitespace-nowrap">
                             {item.name}
                         </th>
                         <td className="py-4 px-6">
