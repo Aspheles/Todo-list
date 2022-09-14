@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   return (
@@ -69,9 +70,10 @@ const LoginPage = () => {
             </div>
 
             <div>
+            <p className="text-sm text-black-600"> Don’t have an account yet? <button className="font-medium text-indigo-600 hover:underline dark:text-primary-500"><Link to={"/signup"}>Sign up</Link></button> </p>
               <button
                 type="submit"
-                className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="mt-2 group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   {/* <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" /> */}

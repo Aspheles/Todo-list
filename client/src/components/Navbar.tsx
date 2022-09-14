@@ -22,7 +22,7 @@ function Nav() {
                 />
               </div>
               <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
+                <div className="ml-10 flex justify-center space-x-4">
                   <button className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"><Link to={"/"}>Home</Link></button>
                   <button className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><Link to={"/products"}>Products</Link></button>
                   <button className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"> <Link to={"/tasks"}>Tasks</Link></button>
@@ -32,7 +32,8 @@ function Nav() {
             </div>
             <div className="hidden md:block">
                 <div className="flex items-end">
-                    <button className="bg-sky-500/50 hover:bg-sky-500/100 text-white px-6 py-2 rounded-full text-sm font-medium"><Link to={"/login"}>Login</Link></button>
+                    <button className="bg-sky-500/50 hover:bg-sky-500/100 text-white px-6 py-2 rounded-full text-sm font-medium mr-2"><Link to={"/login"}>Login</Link></button>
+                    <button className="bg-sky-500/50 hover:bg-sky-500/100 text-white px-6 py-2 rounded-full text-sm font-medium"><Link to={"/login"}>Sign Up</Link></button>
                 </div>
             </div>
             
