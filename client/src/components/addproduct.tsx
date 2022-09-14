@@ -1,7 +1,10 @@
 import { useState } from "react"
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
+  const navigate = useNavigate();
+
   interface TProduct {
     name: string;
     description:string;
@@ -16,7 +19,9 @@ const AddProduct = () => {
 
   const addItem = () => {
     axios.post('http://localhost:3001/createitem', product).then(response => {
-      console.log(response);
+      if(response.status === 201){
+        navigate("/products");
+      }
     })
     
   }
@@ -122,7 +127,9 @@ const AddProduct = () => {
             <div>
             
               <button
-              onClick={() => {addItem()}}
+              onClick={(e) => {
+                e.preventDefault();
+                addItem()}}
                 className="mt-2 group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
