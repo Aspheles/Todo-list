@@ -17,9 +17,9 @@ const Products = () => {
         // <p>{JSON.stringify(products)}</p>
         <>
 
-            <div className="flex flex-col items-end  mt-3">
+            {/* <div className="flex flex-col items-end  mt-3">
                 <button className="bg-purple-700 hover:bg-purple-900 text-white px-6 py-2 text-md rounded-md mr-2 ">Add Product</button>
-            </div>
+            </div> */}
             <div className="overflow-x-auto relative flex justify-center items-center mt-2">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-dark-900 dark:bg-gray-900 dark:text-gray-400">

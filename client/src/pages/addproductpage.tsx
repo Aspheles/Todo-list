@@ -1,6 +1,6 @@
 import {AddProduct} from "../components/addproduct";
 
-const AddproductPage = () => {
+const AddProductPage = () => {
     return (
         <>
          <AddProduct />
@@ -11,4 +11,4 @@ const AddproductPage = () => {
 }
 
 
-export {AddproductPage}
+export {AddProductPage}
