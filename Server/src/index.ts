@@ -18,7 +18,7 @@ pgConnector.connect();
 app.get("/users", userController.GetUsers);
 app.get("/user/:id", userController.getUserById);
 app.post("/register", userController.CreateUser);
-app.get("/login", userController.LoginRequest);
+app.post("/login", userController.LoginRequest);
 
 //Items
 app.get("/items", itemController.getItems);

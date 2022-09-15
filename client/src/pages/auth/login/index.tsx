@@ -1,8 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import {useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import "./index.css";
+import {User} from "../../../interfaces/global_interfaces";
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
+  const [user, setUser] = useState<Partial<User>>({ username: '', email: '', password: ''});
+  const navigate = useNavigate();
+
+  const LoginRequest = () => {
+    axios.post('http://localhost:3001/login', user).then(response => {
+
+      if (response.status === 200) {
+        if(response.data[0].id){
+          toast.success(`Welcome ${response.data[0].username}`)
+          navigate("/");
+        }else{
+          toast.error(response.data);
+        }
+      } else {
+        console.log(response);
+        toast.error(response.data);
+        
+      }
+    })
+  }
+
   return (
     <>
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -22,16 +46,18 @@ const Login = () => {
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
                 <label htmlFor="email-address" className="sr-only">
-                  Email address
+                  Username
                 </label>
                 <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="username"
+                  name="username"
+                  type="text"
+                  autoComplete="username"
                   required
                   className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                  placeholder="Email address"
+                  placeholder="Username"
+                  value={user?.username}
+                  onChange={e => setUser({ ...user, username: e.target.value })}
                 />
               </div>
               <div>
@@ -46,6 +72,8 @@ const Login = () => {
                   required
                   className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                   placeholder="Password"
+                  value={user?.password}
+                  onChange={e => setUser({ ...user, password: e.target.value })}
                 />
               </div>
             </div>
@@ -73,7 +101,10 @@ const Login = () => {
             <div>
             <p className="text-sm text-black-600"> Don’t have an account yet? <button className="font-medium text-indigo-600 hover:underline dark:text-primary-500"><Link to={"/signup"}>Sign up</Link></button> </p>
               <button
-                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  LoginRequest();
+                }}
                 className="mt-2 group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">

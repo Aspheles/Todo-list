@@ -3,17 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {toast} from "react-hot-toast";
 import "./index.css";
+import {TProduct} from "../../interfaces/global_interfaces";
 
 const AddProduct = () => {
   const navigate = useNavigate();
-
-  interface TProduct {
-    name: string;
-    description: string;
-    category: string;
-    price: number;
-    img_url: string;
-  }
 
   // const productData = { name: '', category: '', description: '', price: 0, img_url: ''};
   // const [product, setProduct] = useState<{name:string, description:string, category:string, price:number, img_url:string}>();
