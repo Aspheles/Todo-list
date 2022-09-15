@@ -1,20 +1,20 @@
 import {Routes, Route} from "react-router-dom";
-import {HomePage} from "../pages/homepage";
-import {ProductsPage} from "../pages/productspage";
-import {TasksPage} from "../pages/taskspage";
-import {LoginPage} from "../pages/loginpage";
-import { AddProductPage } from "../pages/addproductpage";
-import { RegisterPage } from "../pages/registerpage";
+import {Home} from "../pages/Home/index";
+import {AddProduct} from "../pages/CreateProduct/index";
+import {Task} from "../pages/Task/index";
+import {Login} from "../pages/auth/login/index";
+import { Product } from "../pages/Product/index";
+import { Register } from "../pages/auth/register/index";
 
 const NavRouter = () => {
     return(
         <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/tasks" element={<TasksPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/addproduct" element={<AddProductPage />} />
-            <Route path="/signup" element={<RegisterPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<AddProduct />} />
+            <Route path="/tasks" element={<Task />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/addproduct" element={<Product />} />
+            <Route path="/signup" element={<Register />} />
         </Routes>
     )
 }

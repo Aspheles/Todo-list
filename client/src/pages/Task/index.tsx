@@ -1,9 +1,10 @@
+import "./index.css";
 
-const TasksPage = () => {
+const Task = () => {
     return (
         <p>Hello this is the Tasks page</p>
     )
 }
 
 
-export {TasksPage}
+export {Task}

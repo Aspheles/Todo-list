@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {toast} from "react-hot-toast";
+import "./index.css";
 
 const AddProduct = () => {
   const navigate = useNavigate();

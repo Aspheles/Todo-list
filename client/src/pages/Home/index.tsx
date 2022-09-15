@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
+import "./index.css";
 
-const HomePage = () => {
+const Home = () => {
     return (
         <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
         <div className="sm:text-center lg:text-left">
@@ -24,4 +25,4 @@ const HomePage = () => {
 }
 
 
-export {HomePage}
+export {Home}
