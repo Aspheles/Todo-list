@@ -26,6 +26,11 @@ const getItemsById = (req : any, res : any) => {
 const CreateItem = (req : any, res : any) => {
     const {name,category,description,price,img_url} = req.body;
 
+    if(!name || !category || !description || !price || !img_url){
+        res.send("All inputs need to be filled in");
+        return;
+    }
+
     pool.query(queries.checkNameExists, [name], (error:any, results:any) => {
         if(error) throw(error);
 

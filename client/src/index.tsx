@@ -4,7 +4,7 @@ import './index.css';
 import Navbar from "./components/Navbar";
 import {BrowserRouter} from "react-router-dom";
 import {NavRouter} from "./components/NavRouter";
-
+import {Toaster} from "react-hot-toast";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,6 +13,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Navbar />
+    <Toaster position="top-right" reverseOrder={true} />
     <NavRouter />
     </BrowserRouter>
 
