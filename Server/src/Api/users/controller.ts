@@ -20,7 +20,7 @@ const getUserById = (req : any, res : any) => {
 
 }
 
-const CreateUser = (req : any, res : any) => {
+const createUser = async (req : Request, res : Response): Promise<void> => {
     const {username, password, email} = req.body;
 
     if(!username || !password ||!email){

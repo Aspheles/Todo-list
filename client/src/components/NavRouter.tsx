@@ -5,6 +5,7 @@ import {Task} from "../pages/Task/index";
 import {Login} from "../pages/Auth/login/index";
 import { Products } from "../pages/Product/index";
 import { Register } from "../pages/Auth/register/index";
+import { EditProduct } from "../pages/EditProduct";
 
 const NavRouter = () => {
     return(
@@ -15,6 +16,7 @@ const NavRouter = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/addproduct" element={<AddProduct />} />
             <Route path="/signup" element={<Register />} />
+            <Route path="/editproduct/:id" element={<EditProduct />} />
         </Routes>
     )
 }

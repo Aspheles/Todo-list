@@ -6,7 +6,7 @@ import * as userController from "./Api/users/controller";
 import * as itemController from "./Api/items/controller";
 
 
-const PORT = 3001;
+const PORT:Number = 3001;
 const app = express();
 
 app.use(express.json());

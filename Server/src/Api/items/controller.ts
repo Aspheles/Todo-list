@@ -56,7 +56,7 @@ const EditItem = (req : any, res : any) => {
         return;
     }
 
-    pool.query(queries.checkNameExists, [name], (error:any, results:any) => {
+    pool.query(queries.checkNameInUpdateExists, [name, id], (error:any, results:any) => {
         if(error) throw(error);
 
         if(results.rows.length){
