@@ -24,6 +24,7 @@ app.post("/login", userController.LoginRequest);
 app.get("/items", itemController.getItems);
 app.get("/item/:id", itemController.getItemsById);
 app.post("/createitem", itemController.CreateItem);
+app.post("/updateitem/:id", itemController.EditItem);
 
 app.listen(PORT, () => {
     console.log(`We are currently live on http://localhost:${PORT}`);
