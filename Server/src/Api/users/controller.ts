@@ -23,10 +23,16 @@ const getUserById = (req : any, res : any) => {
 const CreateUser = (req : any, res : any) => {
     const {username, password, email} = req.body;
 
+    if(!username || !password ||!email){
+        res.send("Some information is missing");
+        return;
+    }
+
     //Check if email or username exists
     pool.query(queries.checkCredentailsExist, [email, username], (err : any, results : any) => {
+        if(err) throw(err);
+        
         if(results.rows.length){
-            if(err) throw(err);
             res.send("Email or username is already taken");
         }else{
             pool.query(queries.createAccount, [username,password,email], (error : any, results : any) => {
@@ -38,5 +44,20 @@ const CreateUser = (req : any, res : any) => {
 
 }
 
+const LoginRequest = (req:any, res:any) => {
+    const {username, password} = req.body;
+    console.log(username);
+    console.log(password);
+    pool.query(queries.checkLoginCredentails, [username, password], (err: any, results: any) => {
+        if(err) throw(err);
 
-export {CreateUser, GetUsers, getUserById}
+        if(results.rows.length){
+            res.status(200).json(results.rows);
+        }else{
+            res.send("Wrong username or password");
+        }
+    })
+}
+
+
+export {CreateUser, GetUsers, getUserById, LoginRequest}

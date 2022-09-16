@@ -1,8 +1,12 @@
 {
-  "name": "Client",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.5",
+    "@headlessui/react": "^1.7.1",
+    "@heroicons/react": "^2.0.11",
+    "@styled-icons/heroicons-solid": "^10.46.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -10,10 +14,13 @@
     "@types/node": "^18.7.16",
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
+    "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
+    "react-hot-toast": "^2.4.0",
+    "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.8.3",
     "web-vitals": "^2.1.0"
   },
@@ -40,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.10",
+    "postcss": "^8.4.16"
   }
 }
