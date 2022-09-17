@@ -1,4 +1,4 @@
-import express from "express";
+import Express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import * as pgConnector from "./Api/Utils/pg.connector";
@@ -7,9 +7,9 @@ import * as itemController from "./Api/items/controller";
 
 
 const PORT:Number = 3001;
-const app = express();
+const app : Express.Application | undefined = Express();
 
-app.use(express.json());
+app.use(Express.json());
 app.use(cors());
 app.use(bodyParser.json());
 pgConnector.connect();
@@ -17,7 +17,7 @@ pgConnector.connect();
 //Accounts
 app.get("/users", userController.GetUsers);
 app.get("/user/:id", userController.getUserById);
-app.post("/register", userController.CreateUser);
+app.post("/register", userController.createUser);
 app.post("/login", userController.LoginRequest);
 
 //Items

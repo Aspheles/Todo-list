@@ -1,17 +1,33 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { fetchItems } from "../../components/Api";
+import { TProduct } from "../../interfaces/global_interfaces";
+
 
 const Products = () => {
     const [itemproducts, setItemProducts] = useState<any>();
+    
 
-    useEffect(() => {
-        axios.get('http://localhost:3001/items')
-            .then(res => {
-                setItemProducts(res.data);
-            }).catch(err => {
-                console.log(err);
-            })
+     useEffect(() => {
+        // axios.get('http://localhost:3001/items')
+        //     .then(res => {
+        //         setItemProducts(res.data);
+        //     }).catch(err => {
+        //         console.log(err);
+        //     })
+
+        
+        const init = async () => {
+            try{
+                const response = await fetchItems();
+                setItemProducts(response);
+            }catch(err){
+                console.log(err)
+            }
+        }
+
+        init();
     }, [])
 
     return (
@@ -44,7 +60,7 @@ const Products = () => {
                     </thead>
                     <tbody>
 
-                        {itemproducts?.map((item: {id:number, name: string; category: string; description: string; price: number; img_url: string; }) => {
+                        {itemproducts?.map((item: TProduct) => {
                             return (
                                 <tr key={item.name} className="bg-white border-b dark:bg-gray-50 dark:border-gray-50">
                                     <th scope="row" className="py-4 px-6 whitespace-nowrap">

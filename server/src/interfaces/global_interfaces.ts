@@ -1,5 +1,4 @@
-interface TProduct {
-    id: number;
+interface Product {
     name: string;
     description: string;
     category: string;
@@ -10,9 +9,13 @@ interface TProduct {
 interface User {
     username: string;
     password: string;
-    repeatPassword: string;
     email: string;
 }
 
 
-export type {TProduct, User}
+interface QueryResult<T>{
+    rows: T[];
+}
+
+
+export type {Product, User, QueryResult}

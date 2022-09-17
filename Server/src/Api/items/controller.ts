@@ -31,7 +31,7 @@ const CreateItem = (req : any, res : any) => {
         return;
     }
 
-    pool.query(queries.checkNameExists, [name], (error:any, results:any) => {
+    pool.query(queries.checkNameExists, [name], (error:Error, results:any) => {
         if(error) throw(error);
 
         if(results.rows.length){
